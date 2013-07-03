@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><!-- saved from url=(0014)about:internet --><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="../../../../../style.css" type="text/css" media="screen"><link rel="stylesheet" href="../../../../../print.css" type="text/css" media="print"><link rel="stylesheet" href="../../../../../override.css" type="text/css"><meta name="keywords" content="IconPart,io.github.ycabon.markings.lineClasses.IconPart,depth,graphicElement,inverse,offset,pattern,percentOffset,percentRepeat,repeat,rotate,stroke,stroke,xOffset,xOffset,yOffset,yOffset"><title>io.github.ycabon.markings.lineClasses.IconPart</title></head><body><script language="javascript" type="text/javascript" src="../../../../../asdoc.js"></script><script language="javascript" type="text/javascript" src="../../../../../help.js"></script><script language="javascript" type="text/javascript" src="../../../../../cookies.js"></script><script language="javascript" type="text/javascript"><!--
+				asdocTitle = 'IconPart - Markings for ArcGIS API for Flex';
+				var baseRef = '../../../../../';
+				window.onload = configPage;
+			--></script>
+<script type="text/javascript">
+			scrollToNameAnchor();
+		</script><table class="titleTable" cellpadding="0" cellspacing="0" id="titleTable" style="display:none"><tr><td class="titleTableTitle" align="left">Markings for ArcGIS API for Flex</td><td class="titleTableTopNav" align="right"><a href="../../../../../package-summary.html" onclick="loadClassListFrame('../../../../../all-classes.html')">All Packages</a>&nbsp;|&nbsp;<a href="../../../../../class-summary.html" onclick="loadClassListFrame('../../../../../all-classes.html')">All Classes</a>&nbsp;|&nbsp;<a href="../../../../../all-index-A.html" onclick="loadClassListFrame('../../../../../index-list.html')">Index</a>&nbsp;|&nbsp;<a id="framesLink1" href="../../../../../index.html?io/github/ycabon/markings/lineClasses/IconPart.html&amp;io/github/ycabon/markings/lineClasses/class-list.html">Frames</a><a id="noFramesLink1" style="display:none" href="" onclick="parent.location=document.location"> No Frames </a></td></tr><tr class="titleTableRow2"><td class="titleTableSubTitle" id="subTitle" align="left">IconPart</td><td class="titleTableSubNav" id="subNav" align="right"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#eventSummary">Events</a></td></tr><tr class="titleTableRow3"><td colspan="3">&nbsp;</td></tr></table><script language="javascript" type="text/javascript" xml:space="preserve">
+				<!--
+				
+					if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("IconPart"); titleBar_setSubNav(false,true,false,false,false,false,true,false,true,false,false	,false,false,false,false,false);}	
+				-->
+			</script><div xmlns:fn="http://www.w3.org/2005/xpath-functions" class="MainContent"><table class="classHeaderTable" cellpadding="0" cellspacing="0"><tr><td class="classHeaderTableLabel">Package</td><td><a href="package-detail.html" onclick="javascript:loadClassListFrame('class-list.html')">io.github.ycabon.markings.lineClasses</a></td></tr><tr><td class="classHeaderTableLabel">Class</td><td class="classSignature">public  class  IconPart</td></tr><tr><td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">IconPart  <img src="../../../../../images/inherit-arrow.gif" title="Inheritance" alt="Inheritance" class="inheritArrow"> flash.display.Sprite</td></tr><tr><td class="classHeaderTableLabel">Implements</td><td> <a href="../../../../../io/github/ycabon/markings/lineClasses/ILinePart.html">ILinePart</a>,  spark.core.IGraphicElementContainer</td></tr></table><p></p><p></p><p></p>
+  The IconPart can be used as a part of an AdvancedLineSymbol.
+  <p>
+  This part creates and places markers along the line using Spark primitives from the Flex SDK:
+  </p>
+               <ul>
+                  <li>
+                     <code>BitmapImage</code> - draws a bitmap data from a source file or source URL.
+  </li>
+                  <li>
+                     <code>Ellipse</code> - draws an ellipse.
+  </li>
+                  <li>
+                     <code>Line</code> - draws a line between two points.
+  </li>
+                  <li>
+                     <code>Path</code> - draws a series of path segments.
+  </li>
+                  <li>
+                     <code>Rect</code> - draws a rectangle.
+  </li>
+               </ul>
+ 
+               <pre>
+  ...
+  &lt;mk:AdvancedLineSymbol>
+      &lt;s:ArrayList>
+          &lt;mk:IconPart repeat="15">
+              &lt;s:Ellipse width="10" height="10">
+                  &lt;s:fill>
+                      &lt;s:SolidColor color="0xFD7F00"/>
+                  &lt;/s:fill>
+                  &lt;s:stroke>
+                      &lt;s:SolidColorStroke color="0xFFD92F" weight="2"/>
+                  &lt;/s:stroke>
+              &lt;/s:Ellipse>
+          &lt;/mk:IconPart>
+      &lt;/s:ArrayList>
+  &lt;/mk:AdvancedLineSymbol>
+  ...
+  </pre>
+ 
+            <p></p><a name="mxmlSyntaxSummary"></a><span class="classHeaderTableLabel">MXML Syntax</span><span id="showMxmlLink" style="display:none"><a href="#mxmlSyntaxSummary" onclick="toggleMXMLOnly();"><img src="../../../../../images/collapsed.gif" title="collapsed" alt="collapsed" class="collapsedImage">Show MXML Syntax</a><br/></span><span id="hideMxmlLink"><a href="#mxmlSyntaxSummary" onclick="toggleMXMLOnly();"><img src="../../../../../images/expanded.gif" title="expanded" alt="expanded" class="expandedImage">Hide MXML Syntax</a></span><div id="mxmlSyntax" class="mxmlSyntax">
+ 
+  <p>The <code>&lt;mk:IconPart&gt;</code> tag inherits all the tag attributes
+  of its superclass, and adds the following tag attributes:</p>
+ 
+  <pre>
+  &lt;mk:IconPart
+    <b>Properties</b>
+    graphicElement="null"
+    offset="NaN"
+    repeat="NaN"
+    rotate="false"
+  /&gt;
+  </pre>
+ 
+  </div><script language="javascript" type="text/javascript"><!--
+								setMXMLOnly();
+								--></script><p><span class="classHeaderTableLabel">Default MXML Property</span><code>graphicElement</code></p><p><span class="classHeaderTableLabel">See also</span></p><div class="seeAlso"><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/spark/primitives/BitmapImage.html" target="mm_external">spark.primitives.BitmapImage</a><br/><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/spark/primitives/Ellipse.html" target="mm_external">spark.primitives.Ellipse</a><br/><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/spark/primitives/Line.html" target="mm_external">spark.primitives.Line</a><br/><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/spark/primitives/Path.html" target="mm_external">spark.primitives.Path</a><br/><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/spark/primitives/Rect.html" target="mm_external">spark.primitives.Rect</a></div><br/><hr></div><a name="propertySummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Properties</div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableProperty"><tr><th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#graphicElement" class="signatureLink">graphicElement</a> : GraphicElement<div class="summaryTableDescription">
+      The element that will be repeated along the line.</div></td><td class="summaryTableOwnerCol">IconPart</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#offset" class="signatureLink">offset</a> : Number<div class="summaryTableDescription">
+      Number that specifies the distance from the start of the Polyline.</div></td><td class="summaryTableOwnerCol">IconPart</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#percentOffset" class="signatureLink">percentOffset</a> : Number<div class="summaryTableDescription">
+      Number that specifies the distance from the start of the Polyline.</div></td><td class="summaryTableOwnerCol">IconPart</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#percentRepeat" class="signatureLink">percentRepeat</a> : Number<div class="summaryTableDescription">
+      Number that specifies the distance between to repetitions of the graphicElement.</div></td><td class="summaryTableOwnerCol">IconPart</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#repeat" class="signatureLink">repeat</a> : Number<div class="summaryTableDescription">
+      Number that specifies the distance between to repetitions of the graphicElement.</div></td><td class="summaryTableOwnerCol">IconPart</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#rotate" class="signatureLink">rotate</a> : Boolean<div class="summaryTableDescription">
+      Whether or not the graphic element is rotated to make in look like it follows it.</div></td><td class="summaryTableOwnerCol">IconPart</td></tr></table></div><a name="methodSummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Methods </div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableMethod"><tr><th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#IconPart()" class="signatureLink">IconPart</a>(graphicElement:GraphicElement = null, offset:Number, percentOffset:Number, repeat:Number, percentRepeat:Number, rotate:Boolean = false)</div><div class="summaryTableDescription">
+     Constructor.</div></td><td class="summaryTableOwnerCol">IconPart</td></tr></table></div><a name="eventSummary"></a><div class="summarySection"><div class="summaryTableTitle">Events</div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableEvent"><tr><th>&nbsp;</th><th colspan="2">Event</th><th> Summary </th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#event:change" class="signatureLink">change</a></div></td><td class="summaryTableDescription summaryTableCol">Dispatched when the value of the part changes as a result of its properties modifications.</td><td class="summaryTableOwnerCol">IconPart</td></tr></table></div><script language="javascript" type="text/javascript"><!--
+										showHideInherited();
+										--></script><div class="MainContent"><div class="detailSectionHeader">Property Detail</div><a name="propertyDetail"></a><a name="graphicElement"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">graphicElement</td><td class="detailHeaderType">property</td></tr></table><div class="detailBody"><code>graphicElement:GraphicElement</code><p></p><p></p><p>
+      The element that will be repeated along the line.
+      The element must not have filters, blend mode, transformations defined to be properly render.
+     
+      </p><p> The default value is <code>null</code>.</p><p>This property can be used as the source for data binding.</p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get graphicElement():GraphicElement</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function set graphicElement(value:GraphicElement):void</code><br/><p><span class="label">See also</span></p><div class="seeAlso"><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/spark/primitives/BitmapImage.html" target="mm_external">spark.primitives.BitmapImage</a><br/><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/spark/primitives/Ellipse.html" target="mm_external">spark.primitives.Ellipse</a><br/><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/spark/primitives/Line.html" target="mm_external">spark.primitives.Line</a><br/><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/spark/primitives/Path.html" target="mm_external">spark.primitives.Path</a><br/><a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/spark/primitives/Rect.html" target="mm_external">spark.primitives.Rect</a></div></div><a name="propertyDetail"></a><a name="offset"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">offset</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>offset:Number</code><p></p><p></p><p>
+      Number that specifies the distance from the start of the Polyline.
+      One typical use of this property is for giving the impression of movement.
+     
+      <p>Note: You can specify a percentage value in the MXML
+      <code>offset</code> attribute, such as <code>offset="100%"</code>,
+      but you cannot use a percentage value in the <code>offset</code>
+      property in ActionScript.
+      Use the <code>percentOffset</code> property instead.</p>
+     
+      <p>Setting the <code>percentOffset</code> property
+      resets this property to NaN.</p>
+      
+      </p><p> The default value is <code>NaN</code>.</p><p>This property can be used as the source for data binding.</p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get offset():Number</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function set offset(value:Number):void</code><br/><p><span class="label">See also</span></p><div class="seeAlso"><a href="IconPart.html#percentOffset" target="">percentOffset</a></div></div><a name="propertyDetail"></a><a name="percentOffset"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">percentOffset</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>percentOffset:Number</code><p></p><p></p><p>
+      Number that specifies the distance from the start of the Polyline.
+      One typical use of this property is for giving the impression of movement.
+     
+      <p>Setting the <code>offset</code> property
+      resets this property to NaN.</p>
+      
+      </p><p> The default value is <code>NaN</code>.</p><p>This property can be used as the source for data binding.</p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get percentOffset():Number</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function set percentOffset(value:Number):void</code><br/><p><span class="label">See also</span></p><div class="seeAlso"><a href="IconPart.html#offset" target="">offset</a></div></div><a name="propertyDetail"></a><a name="percentRepeat"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">percentRepeat</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>percentRepeat:Number</code><p></p><p></p><p>
+      Number that specifies the distance between to repetitions of the <code>graphicElement</code>.
+      If the value is <code>NaN</code>, the element is not repeated.
+     
+      <p>Setting the <code>repeat</code> property
+      resets this property to NaN.</p>
+      
+      </p><p> The default value is <code>NaN</code>.</p><p>This property can be used as the source for data binding.</p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get percentRepeat():Number</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function set percentRepeat(value:Number):void</code><br/><p><span class="label">See also</span></p><div class="seeAlso"><a href="IconPart.html#repeat" target="">repeat</a></div></div><a name="propertyDetail"></a><a name="repeat"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">repeat</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>repeat:Number</code><p></p><p></p><p>
+      Number that specifies the distance between to repetitions of the <code>graphicElement</code>.
+      If the value is <code>NaN</code>, the element is not repeated.
+     
+      <p>Note: You can specify a percentage value in the MXML
+      <code>repeat</code> attribute, such as <code>repeat="100%"</code>,
+      but you cannot use a percentage value in the <code>repeat</code>
+      property in ActionScript.
+      Use the <code>percentRepeat</code> property instead.</p>
+     
+      <p>Setting the <code>percentRepeat</code> property
+      resets this property to NaN.</p>
+      
+      </p><p> The default value is <code>NaN</code>.</p><p>This property can be used as the source for data binding.</p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get repeat():Number</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function set repeat(value:Number):void</code><br/><p><span class="label">See also</span></p><div class="seeAlso"><a href="IconPart.html#percentRepeat" target="">percentRepeat</a></div></div><a name="propertyDetail"></a><a name="rotate"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">rotate</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>rotate:Boolean</code><p></p><p></p><p>
+      Whether or not the graphic element is rotated to make in look like it follows it.
+      Setting this flag to <code>true</code> has some impact on performances if a lot of objects are render.
+     
+      </p><p> The default value is <code>false</code>.</p><p>This property can be used as the source for data binding.</p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get rotate():Boolean</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function set rotate(value:Boolean):void</code><br/></div><a name="constructorDetail"></a><div class="detailSectionHeader">Constructor Detail</div><a name="IconPart()"></a><a name="IconPart(spark.primitives.supportClasses.GraphicElement,Number,Number,Number,Number,Boolean)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">IconPart</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">Constructor</td></tr></table><div class="detailBody"><code>public function IconPart(graphicElement:GraphicElement = null, offset:Number, percentOffset:Number, repeat:Number, percentRepeat:Number, rotate:Boolean = false)</code><p></p><p>
+     Constructor.
+     
+     </p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">graphicElement</span>:GraphicElement</code> (default = <code>null</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">offset</span>:Number</code> (default = <code>NaN</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">percentOffset</span>:Number</code> (default = <code>NaN</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">repeat</span>:Number</code> (default = <code>NaN</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">percentRepeat</span>:Number</code> (default = <code>NaN</code>)<code></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">rotate</span>:Boolean</code> (default = <code>false</code>)<code></code></td></tr></table></div><div class="detailSectionHeader"> Event Detail </div><a name="event:change"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">change</td><td class="detailHeaderType"> Event </td></tr></table><div class="detailBody"><span class="label">Event Object Type: </span><code>flash.events.Event</code><br/><span class="label">Event.type property = </span><code>flash.events.Event.CHANGE</code><br/><p></p><p></p><p>
+  Dispatched when the value of the part changes
+  as a result of its properties modifications.
+ 
+  </p></div><br/><br/><hr><br/><p></p><center class="copyright"><footer></footer><br/>Wed Jul 3 2013, 01:56 PM -07:00  </center></div></body></html><!--<br/>Wed Jul 3 2013, 01:56 PM -07:00  -->
