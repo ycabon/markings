@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="markings" default="main" basedir=".">
+
+	<property file="env.properties" />
+	<property environment="env" />
+	<property file="build.properties" />
+
+	<property name="flex.home" value="${env.FLEX_HOME}" />
+	<property name="flex.libs" value="${flex.home}/frameworks/libs" />
+
+	<target name="main" depends="clean, compile, doc, copyDocToSWC, cleanDoc" />
+
+	<target name="clean">
+		<delete dir="${dist.dir}" />
+	</target>
+
+	<target name="mkdirs">
+		<mkdir dir="${dist.dir}" />
+	</target>
+
+	<target name="init" depends="mkdirs">
+		<tstamp>
+			<format pattern="yyyy-MM-dd" property="today" />
+		</tstamp>
+	</target>
+
+	<target name="compile" depends="init">
+		<java failonerror="true" fork="true" jar="${flex.home}/lib/compc.jar" maxmemory="384m">
+			<jvmarg value="-Dsun.io.useCanonCaches=false" />
+			<arg line="+flexlib='${flex.home}/frameworks'" />
+			<arg line="-headless-server" />
+			<arg line="-optimize" />
+			<arg line="-external-library-path+='libs'" />
+			<arg line="-external-library-path+='${flex.libs}'" />
+			<arg line="-external-library-path+='${flex.libs}/mx'" />
+			<arg line="-external-library-path+='${flex.libs}/air'" />
+			<arg line="-include-namespaces ${namespace}" />
+			<arg line="-load-config+='flex-config.xml'" />
+			<arg line="-source-path ${basedir}/src" />
+			<arg line="-include-file design.xml ${basedir}/src/design.xml" />
+			<arg line="-output ${dist.dir}/${artifactId}-${version}.swc" />
+		</java>
+	</target>
+
+	<target name="doc">
+		<java classname="flex2.tools.ASDoc" classpath="${flex.home}/lib/asdoc.jar" failonerror="true" fork="true" maxmemory="1024m">
+			<jvmarg value="-Dsun.io.useCanonCaches=false" />
+			<jvmarg value="-Xbootclasspath/p:'${flex.home}/lib/xalan.jar'" />
+			<arg line="+flexlib='${flex.home}/frameworks'" />
+			<arg line="-headless-server" />
+			<arg line="-external-library-path+='libs'" />
+			<arg line="-external-library-path+='${flex.libs}'" />
+			<arg line="-external-library-path+='${flex.libs}/mx'" />
+			<arg line="-external-library-path+='${flex.libs}/air'" />
+            <arg line="-load-config+='${basedir}/asdoc/asdoc-config.xml'" />
+			<arg line="-doc-sources ${basedir}/src" />
+			<arg line="-source-path ${basedir}/src" />
+            <arg line="-templates-path ${basedir}/asdoc/templates" />
+			<arg line="-output ${asdoc.output}" />
+			<arg line="-keep-xml=true" />
+			<arg line="-main-title 'Markings for ArcGIS API for Flex'" />
+			<arg line="-window-title 'Markings for ArcGIS API for Flex'" />
+		</java>
+	</target>
+
+	<target name="copyDocToSWC" depends="init">
+		<zip destfile="${dist.dir}/${artifactId}-${version}.swc" update="true">
+			<zipfileset dir="${asdoc.output}/tempdita" prefix="docs">
+				<include name="packages.dita" />
+				<include name="io.*.xml" />
+			</zipfileset>
+		</zip>
+	</target>
+
+	<target name="cleanDoc">
+		<delete dir="${asdoc.output}/tempdita" />
+		<delete file="${asdoc.output}/index.tmp" />
+		<delete file="${asdoc.output}/toplevel.xml" />
+	</target>
+
+</project>

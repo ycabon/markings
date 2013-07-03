@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="false" useMultiPlatformConfig="false" version="3">
+  <includeClasses>
+    <classEntry path="io.github.ycabon.markings.AdvancedLineSymbol"/>
+    <classEntry path="io.github.ycabon.markings.lineClasses.DashedLinePart"/>
+    <classEntry path="io.github.ycabon.markings.lineClasses.ILinePart"/>
+    <classEntry path="io.github.ycabon.markings.lineClasses.IconPart"/>
+    <classEntry path="io.github.ycabon.markings.lineClasses.SolidLinePart"/>
+    <classEntry path="io.github.ycabon.markings.supportClasses.Clipper"/>
+    <classEntry path="io.github.ycabon.markings.supportClasses.DrawInfo"/>
+    <classEntry path="io.github.ycabon.markings.supportClasses.SegmentsView"/>
+    <classEntry path="io.github.ycabon.markings.supportClasses.SpritePool"/>
+    <classEntry path="io.github.ycabon.markings.supportClasses.SymbolValidationManager"/>
+    <classEntry path="io.github.ycabon.utils.MatrixUtil"/>
+  </includeClasses>
+  <includeResources>
+    <resourceEntry destPath="design.xml" sourcePath="design.xml"/>
+  </includeResources>
+  <namespaceManifests/>
+</flexLibProperties>

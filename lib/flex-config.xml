@@ -1,0 +1,20 @@
+<?xml version='1.0'?>
+<flex-config>
+
+    <compiler>
+        <namespaces>
+            <namespace append="true">
+                <uri>http://ycabon.github.io/markings</uri>
+                <manifest>manifest.xml</manifest>
+            </namespace>
+        </namespaces>
+    </compiler>
+    
+	<include-classes>
+        <class>io.github.ycabon.markings.AdvancedLineSymbol</class>
+        <class>io.github.ycabon.markings.lineClasses.DashedLinePart</class>
+        <class>io.github.ycabon.markings.lineClasses.IconPart</class>
+        <class>io.github.ycabon.markings.lineClasses.SolidLinePart</class>
+	</include-classes>
+	
+</flex-config>

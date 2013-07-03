@@ -1,0 +1,7 @@
+<?xml version='1.0'?>
+<componentPackage>
+    <component id="AdvancedLineSymbol" class="io.github.ycabon.markings.AdvancedLineSymbol"/>
+    <component id="DashedLinePart" class="io.github.ycabon.markings.lineClasses.DashedLinePart"/>
+    <component id="IconPart" class="io.github.ycabon.markings.lineClasses.IconPart"/>
+    <component id="SolidLinePart" class="io.github.ycabon.markings.lineClasses.SolidLinePart"/>
+</componentPackage>
