@@ -4,6 +4,7 @@ Markings
 Markings is a library of advanced symbols for the [ArcGIS API for Flex](https://developers.arcgis.com/en/flex/). It's designed to give to the developer (You) infinite number of different styles for rendering your Graphics on the Map.
 
 The first featured symbol is the [AdvancedLineSymbol](http://ycabon.github.io/markings/asdoc/io/github/ycabon/markings/AdvancedLineSymbol.html). The ArcGIS API for Flex supports a finite numbers of line styles (solid, dash, dashdot, dashdotdot, dot) through the [SimpleLineSymbol](https://developers.arcgis.com/en/flex/api-reference/com/esri/ags/symbols/SimpleLineSymbol.html). The AdvancedLineSymbol lets you define easily, using MXML or AS3, meaningful line symbologies.
+The symbol does the heavy duty work, projecting the Polyline, clipping it and you just have to provide "line part" which are drawn sequentially. A part can define a solid or dashed line, using Spark strokes or icons which can be placed anywhere along the line using an offset. By animating this offset the line can express a motion.  
 
 ## Requirements.
 * [ArcGIS API for Flex SWC](http://links.esri.com/flex-api/latest-download) >= 3.1
