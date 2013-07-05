@@ -621,7 +621,7 @@ class PositionHelper
         // get the x and ys.
         const path:Vector.<Number> = _projectedPaths[pathIndex];
         const angles:Vector.<Number> = _pathSegmentsAngles[pathIndex];
-        const segmentIndex:Number = lengthIndex * 2;
+        const segmentIndex:int = lengthIndex * 2;
         var xFrom:Number = path[segmentIndex];
         var yFrom:Number = path[segmentIndex + 1];
         var xTo:Number = path[segmentIndex + 2];

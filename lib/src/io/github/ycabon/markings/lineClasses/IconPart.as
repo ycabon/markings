@@ -197,9 +197,9 @@ public class IconPart extends Sprite implements ILinePart, IGraphicElementContai
     /**
      *  The element that will be repeated along the line.
      *  The element must not have filters, blend mode, transformations defined to be properly render.
-     * 
+     *
      *  @default null
-     * 
+     *
      *  @see http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/spark/primitives/BitmapImage.html spark.primitives.BitmapImage
      *  @see http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/spark/primitives/Ellipse.html spark.primitives.Ellipse
      *  @see http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/spark/primitives/Line.html spark.primitives.Line
@@ -246,8 +246,8 @@ public class IconPart extends Sprite implements ILinePart, IGraphicElementContai
     /**
      *  Whether or not the graphic element is rotated to make in look like it follows it.
      *  Setting this flag to <code>true</code> has some impact on performances if a lot of objects are render.
-     * 
-     *  @default false 
+     *
+     *  @default false
      */
     public function get rotate():Boolean
     {
@@ -279,18 +279,18 @@ public class IconPart extends Sprite implements ILinePart, IGraphicElementContai
     /**
      *  Number that specifies the distance from the start of the Polyline.
      *  One typical use of this property is for giving the impression of movement.
-     * 
+     *
      *  <p>Note: You can specify a percentage value in the MXML
      *  <code>offset</code> attribute, such as <code>offset="100%"</code>,
      *  but you cannot use a percentage value in the <code>offset</code>
      *  property in ActionScript.
      *  Use the <code>percentOffset</code> property instead.</p>
-     * 
+     *
      *  <p>Setting the <code>percentOffset</code> property
      *  resets this property to NaN.</p>
-     *  
+     *
      *  @default NaN
-     * 
+     *
      *  @see #percentOffset
      */
     public function get offset():Number
@@ -305,7 +305,7 @@ public class IconPart extends Sprite implements ILinePart, IGraphicElementContai
     {
         if (_offset !== value)
         {
-            _offset = value == 0 ? NaN : value;
+            _offset = value;
             _percentOffset = NaN;
             dispatchChangeEvent();
         }
@@ -318,16 +318,16 @@ public class IconPart extends Sprite implements ILinePart, IGraphicElementContai
     private var _percentOffset:Number = NaN;
 
     [Bindable(event="change")]
-    
+
     /**
      *  Number that specifies the distance from the start of the Polyline.
      *  One typical use of this property is for giving the impression of movement.
-     * 
+     *
      *  <p>Setting the <code>offset</code> property
      *  resets this property to NaN.</p>
-     *  
+     *
      *  @default NaN
-     * 
+     *
      *  @see #offset
      */
     public function get percentOffset():Number
@@ -342,7 +342,7 @@ public class IconPart extends Sprite implements ILinePart, IGraphicElementContai
     {
         if (_percentOffset !== value)
         {
-            _percentOffset = value == 0 ? NaN : value;
+            _percentOffset = value;
             _offset = NaN;
             dispatchChangeEvent();
         }
@@ -356,22 +356,22 @@ public class IconPart extends Sprite implements ILinePart, IGraphicElementContai
 
     [Bindable(event="change")]
     [PercentProxy("percentRepeat")]
-    
+
     /**
      *  Number that specifies the distance between to repetitions of the <code>graphicElement</code>.
      *  If the value is <code>NaN</code>, the element is not repeated.
-     * 
+     *
      *  <p>Note: You can specify a percentage value in the MXML
      *  <code>repeat</code> attribute, such as <code>repeat="100%"</code>,
      *  but you cannot use a percentage value in the <code>repeat</code>
      *  property in ActionScript.
      *  Use the <code>percentRepeat</code> property instead.</p>
-     * 
+     *
      *  <p>Setting the <code>percentRepeat</code> property
      *  resets this property to NaN.</p>
-     *  
+     *
      *  @default NaN
-     * 
+     *
      *  @see #percentRepeat
      */
     public function get repeat():Number
@@ -399,16 +399,16 @@ public class IconPart extends Sprite implements ILinePart, IGraphicElementContai
     private var _percentRepeat:Number = NaN;
 
     [Bindable(event="change")]
-    
+
     /**
      *  Number that specifies the distance between to repetitions of the <code>graphicElement</code>.
      *  If the value is <code>NaN</code>, the element is not repeated.
-     * 
+     *
      *  <p>Setting the <code>repeat</code> property
      *  resets this property to NaN.</p>
-     *  
+     *
      *  @default NaN
-     * 
+     *
      *  @see #repeat
      */
     public function get percentRepeat():Number
@@ -470,8 +470,11 @@ public class IconPart extends Sprite implements ILinePart, IGraphicElementContai
         var elementYOffset:Number = graphicElement.verticalCenter !== null ? Number(graphicElement.verticalCenter) : NaN;
         _graphicElement.validateProperties();
         _graphicElement.validateSize();
-        _graphicElement.setLayoutBoundsSize(_graphicElement.getPreferredBoundsWidth(),
-                                            _graphicElement.getPreferredBoundsHeight(),
+
+        var elementWidth:Number = _graphicElement.measuredWidth || _graphicElement.getPreferredBoundsWidth();
+        var elementHeight:Number = _graphicElement.measuredHeight || _graphicElement.getPreferredBoundsHeight();
+        _graphicElement.setLayoutBoundsSize(elementWidth,
+                                            elementHeight,
                                             false);
 
         var drawInfo:DrawInfo;
@@ -485,11 +488,11 @@ public class IconPart extends Sprite implements ILinePart, IGraphicElementContai
         {
             if (isNaN(elementXOffset))
             {
-                elementXOffset = _graphicElement.measuredWidth * .5 || _graphicElement.getPreferredBoundsWidth() * .5;
+                elementXOffset = elementWidth * .5;
             }
             if (isNaN(elementYOffset))
             {
-                elementYOffset = _graphicElement.measuredHeight * .5 || _graphicElement.getPreferredBoundsHeight() * .5;
+                elementYOffset = elementHeight * .5;
             }
 
             var m:Matrix = new Matrix();
@@ -509,7 +512,7 @@ public class IconPart extends Sprite implements ILinePart, IGraphicElementContai
                     if (!_graphicElement.setSharedDisplayObject(sharedDisplayObject as DisplayObject))
                     {
                         pool.disposeSprites(this);
-                        throw new Error("Filters, blend modes and transformations are not supported on Spark Primitives by the Markings library");
+                        throw new Error("Filters, blend modes, transformations, Path using a stroke with miter joints are not supported on Spark Primitives by the Markings library");
                         return;
                     }
                     _graphicElement.validateProperties();
@@ -527,11 +530,11 @@ public class IconPart extends Sprite implements ILinePart, IGraphicElementContai
 
             if (isNaN(elementXOffset))
             {
-                elementXOffset = _graphicElement.getPreferredBoundsWidth() * .5;
+                elementXOffset = elementWidth * .5;
             }
             if (isNaN(elementYOffset))
             {
-                elementYOffset = _graphicElement.getPreferredBoundsHeight() * .5;
+                elementYOffset = elementHeight * .5;
             }
 
             _graphicElement.displayObjectSharingMode = DisplayObjectSharingMode.USES_SHARED_OBJECT;

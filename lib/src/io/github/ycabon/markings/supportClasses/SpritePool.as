@@ -136,11 +136,7 @@ public class SpritePool
 
         if (howMany > 0)
         {
-            var i:int,
-                linePartSprite:Sprite,
-                startIndex:int,
-                childrenToRemove:int,
-                depth:int = linePart.depth;
+            var i:int, linePartSprite:Sprite, startIndex:int, childrenToRemove:int, depth:int = linePart.depth;
 
             //
             // Add the canvas for the line part if it doesn't exist.
@@ -161,9 +157,9 @@ public class SpritePool
                 }
                 _sprite_startIndexes[depth] = 0;
                 _sprite_childrenToRemove[depth] = 0;
-            }            
+            }
 
-            linePartSprite = _sprite_displayList[depth];            
+            linePartSprite = _sprite_displayList[depth];
             startIndex = _sprite_startIndexes[depth];
             childrenToRemove = _sprite_childrenToRemove[depth];
 
@@ -239,24 +235,20 @@ public class SpritePool
 
     public function destroy():void
     {
-    /*var i:int;
-    var startIndex:int;
-    var sprites:Vector.<Sprite> = _sprite_displayList[linePart.depth];
-    var howManyToRemove:int = sprites.length;
-    startIndex = getStartIndex(linePart);
-    //trace("[" + linePart.depth + "] adding children [" + beforeLength + ", " + (beforeLength + howManyToAdd) + "] to indexes [" + (startIndex + beforeLength) + ", ", (startIndex + beforeLength + howManyToAdd) + "]");
-    for (i = 0; i < howManyToRemove; i++)
-    {
-        _sprite.removeChildAt(startIndex);
-    }
-
-    //trace("[" + linePart.depth + "] disposing " + howManyToRemove + " sprites");
-    var spliced:Vector.<Sprite> = sprites.splice(0, howManyToRemove);
-    for (i = spliced.length - 1; i >= 0; i--)
-    {
-        dispose(spliced[i]);
-    }
-    updateIndexes();*/
+        var sprite:Sprite;
+        for (var i:int, n:int = _sprite_displayList.length; i < n; i++)
+        {
+            sprite = _sprite_displayList[i];
+            if (sprite)
+            {
+                _sprite.removeChild(sprite);
+                dispose(sprite as ISharedDisplayObject);
+                for (var index:int = sprite.numChildren - 1; index >= 0; index--)
+                {
+                    dispose(sprite.removeChildAt(index) as ISharedDisplayObject);
+                }
+            }
+        }
     }
 
 }
