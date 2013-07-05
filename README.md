@@ -43,7 +43,7 @@ The first featured symbol is the [AdvancedLineSymbol](http://ycabon.github.io/ma
 </mk:AdvancedLineSymbol>
 ```
 
-## Licencing.
+## Licensing.
 
 Copyright 2012-2013 Esri
 
