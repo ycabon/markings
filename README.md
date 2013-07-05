@@ -14,7 +14,7 @@ The first featured symbol is the [AdvancedLineSymbol](http://ycabon.github.io/ma
 * Create a new application containing a map and some line Graphic.
 * Start styling.
 
-[![Example of AdvancedLineSymbol](https://raw.github.com/ycabon/markings/gh-pages/images/lineRoadSymbol.png "Example of AdvancedLineSymbol")]
+![Example of AdvancedLineSymbol](https://raw.github.com/ycabon/markings/gh-pages/images/lineRoadSymbol.png "Example of AdvancedLineSymbol")
 
 ```XML
 <mk:AdvancedLineSymbol id="lineSymbolRoad">
