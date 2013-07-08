@@ -1,0 +1,13 @@
+<?xml version='1.0'?>
+<flex-config>
+
+    <compiler>
+        <namespaces>
+            <namespace append="true">
+                <uri>http://ycabon.github.io/markings</uri>
+                <manifest>../manifest.xml</manifest>
+            </namespace>
+        </namespaces>
+    </compiler>
+	
+</flex-config>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<design version="2">
+    <namespaces>
+        <namespace prefix="mk" uri="http://ycabon.github.io/markings"/>
+    </namespaces>
+</design>
