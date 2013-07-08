@@ -694,20 +694,20 @@
 								</xsl:otherwise>
 							</xsl:choose>
 						</td>
-						<td class="titleTableLogo" align="right" rowspan="3">
-							<img src="{$baseRef}images/logo.jpg" class="logoImage">
-								<xsl:attribute name="alt">
-									<xsl:call-template name="getLocalizedString">
-										<xsl:with-param name="key">AdobeLogo</xsl:with-param>
-									</xsl:call-template>
-								</xsl:attribute>
-								<xsl:attribute name="title">
-									<xsl:call-template name="getLocalizedString">
-										<xsl:with-param name="key">AdobeLogo</xsl:with-param>
-									</xsl:call-template>
-								</xsl:attribute>
-							</img>
-						</td>
+<!-- 						<td class="titleTableLogo" align="right" rowspan="3"> -->
+<!-- 							<img src="{$baseRef}images/logo.jpg" class="logoImage"> -->
+<!-- 								<xsl:attribute name="alt"> -->
+<!-- 									<xsl:call-template name="getLocalizedString"> -->
+<!-- 										<xsl:with-param name="key">AdobeLogo</xsl:with-param> -->
+<!-- 									</xsl:call-template> -->
+<!-- 								</xsl:attribute> -->
+<!-- 								<xsl:attribute name="title"> -->
+<!-- 									<xsl:call-template name="getLocalizedString"> -->
+<!-- 										<xsl:with-param name="key">AdobeLogo</xsl:with-param> -->
+<!-- 									</xsl:call-template> -->
+<!-- 								</xsl:attribute> -->
+<!-- 							</img> -->
+<!-- 						</td> -->
 					</tr>
 					<tr class="titleTableRow2">
 						<td class="titleTableSubTitle" id="subTitle" align="left">
